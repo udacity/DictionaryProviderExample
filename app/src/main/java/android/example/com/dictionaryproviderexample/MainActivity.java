@@ -15,7 +15,10 @@
  */
 package android.example.com.dictionaryproviderexample;
 
+import android.content.ContentResolver;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.UserDictionary;
 import android.provider.UserDictionary.Words;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
@@ -33,5 +36,11 @@ public class MainActivity extends ActionBarActivity {
 
         // Get the TextView which will be populated with the Dictionary ContentProvider data.
         TextView dictTextView = (TextView) findViewById(R.id.dictionary_text_view);
+
+        // Get the ContentResolver which will send a message to the ContentProvider
+        ContentResolver resolver = getContentResolver();
+
+        // Get a Cursor containing all of the rows in the Words table
+        Cursor cursor = resolver.query(UserDictionary.Words.CONTENT_URI, null, null, null, null);
     }
 }
