@@ -16,8 +16,9 @@
 package android.example.com.dictionaryproviderexample;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.provider.UserDictionary.Words;
+import android.support.v7.app.ActionBarActivity;
+import android.widget.TextView;
 
 /**
  * This is the central activity for the Provider Dictionary Example App. The purpose of this app is
@@ -29,5 +30,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Get the TextView which will be populated with the Dictionary ContentProvider data.
+        TextView dictTextView = (TextView) findViewById(R.id.dictionary_text_view);
     }
 }
