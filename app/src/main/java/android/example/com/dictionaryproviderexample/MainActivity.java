@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
             while (cursor.moveToNext()) {
                 // Use that index to extract the String value of the word
                 // at the current row the cursor is on.
-                int id = cursor.getInt(idColumn);
+                long id = cursor.getLong(idColumn);
                 int frequency = cursor.getInt(frequencyColumn);
                 String word = cursor.getString(wordColumn);
 
