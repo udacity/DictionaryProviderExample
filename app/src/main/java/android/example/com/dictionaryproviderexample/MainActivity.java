@@ -65,5 +65,6 @@ public class MainActivity extends ActionBarActivity {
 
         // Attach the adapter to the ListView.
         dictListView.setAdapter(adapter);
+        // should I add a "finally" block to execute cursor.close()?
     }
 }
